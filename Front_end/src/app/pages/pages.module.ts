@@ -4,6 +4,7 @@ import { PaginaPruebaComponent } from './pagina-prueba/pagina-prueba.component';
 import { CarteraComponent } from './cartera/cartera.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { RegistroComponent } from './registro/registro.component';
+import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
 
 
 
@@ -13,7 +14,8 @@ import { RegistroComponent } from './registro/registro.component';
     PaginaPruebaComponent,
     CarteraComponent,
     PerfilUsuarioComponent,
-    RegistroComponent
+    RegistroComponent,
+    QuienesSomosComponent
   ],
   imports: [
     CommonModule
@@ -22,7 +24,8 @@ import { RegistroComponent } from './registro/registro.component';
     PaginaPruebaComponent,
     CarteraComponent,
     PerfilUsuarioComponent,
-    RegistroComponent
+    RegistroComponent,
+    QuienesSomosComponent
   ]
 })
 export class PagesModule { }
