@@ -4,6 +4,8 @@ import { PaginaPruebaComponent } from './pagina-prueba/pagina-prueba.component';
 import { CarteraComponent } from './cartera/cartera.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { RegistroComponent } from './registro/registro.component';
+import { RecuperarContraseñaComponent } from './recuperar_contraseña/recuperar-contraseña/recuperar-contraseña.component';
+import { NuevaContraseñaComponent } from './recuperar_contraseña/nueva-contraseña/nueva-contraseña.component';
 
 
 
@@ -13,7 +15,9 @@ import { RegistroComponent } from './registro/registro.component';
     PaginaPruebaComponent,
     CarteraComponent,
     PerfilUsuarioComponent,
-    RegistroComponent
+    RegistroComponent,
+    RecuperarContraseñaComponent,
+    NuevaContraseñaComponent
   ],
   imports: [
     CommonModule
