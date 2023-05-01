@@ -5,6 +5,8 @@ import { CarteraComponent } from './cartera/cartera.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { RegistroComponent } from './registro/registro.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { RecuperarContraseñaComponent } from './recuperar_contraseña/recuperar-contraseña/recuperar-contraseña.component';
+import { NuevaContraseñaComponent } from './recuperar_contraseña/nueva-contraseña/nueva-contraseña.component';
 
 
 
@@ -14,7 +16,9 @@ import { AppRoutingModule } from '../app-routing.module';
     PaginaPruebaComponent,
     CarteraComponent,
     PerfilUsuarioComponent,
-    RegistroComponent
+    RegistroComponent,
+    RecuperarContraseñaComponent,
+    NuevaContraseñaComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +28,9 @@ import { AppRoutingModule } from '../app-routing.module';
     PaginaPruebaComponent,
     CarteraComponent,
     PerfilUsuarioComponent,
-    RegistroComponent
+    RegistroComponent,
+    RecuperarContraseñaComponent,
+    NuevaContraseñaComponent
   ]
 })
 export class PagesModule { }
