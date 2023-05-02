@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 import { LayoutModule } from './layout/layout.module';
 import { PagesModule } from './pages/pages.module';
+import { HomeComponent } from './pages/pages/home/home.component';
 
 
 
@@ -18,7 +19,8 @@ import { PagesModule } from './pages/pages.module';
     BrowserModule,
     AppRoutingModule,
     LayoutModule,
-    PagesModule
+    PagesModule,
+    HomeComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
