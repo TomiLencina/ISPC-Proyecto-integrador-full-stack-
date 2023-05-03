@@ -9,6 +9,7 @@ import { RecuperarContraseñaComponent } from './recuperar_contraseña/recuperar
 import { NuevaContraseñaComponent } from './recuperar_contraseña/nueva-contraseña/nueva-contraseña.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { TerminosycondicionesComponent } from './terminosycondiciones/terminosycondiciones.component';
 
 
 
@@ -22,7 +23,8 @@ import { LoginComponent } from './login/login.component';
     RecuperarContraseñaComponent,
     NuevaContraseñaComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    TerminosycondicionesComponent
   ],
   imports: [
     CommonModule,
