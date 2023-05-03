@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+  }
+
+.row{
+    padding: 3%;
+    padding-top: 6%;
+}
+
+.bienvenidos{
+  text-align: center;
+}
+
+.bienvenidos h1 {
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.container.portfolio{
+  max-width: 800px;
+  margin-top: 4em;
+}
+
+.container-portfolio > *{
+
+  margin: 4em auto;
+
+}
+
+.contenido-bienvenidos{
+  max-width: 600px;
+  margin: auto;
+}
