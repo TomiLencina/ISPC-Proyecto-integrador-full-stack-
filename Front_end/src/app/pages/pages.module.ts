@@ -35,7 +35,8 @@ import { LoginComponent } from './login/login.component';
     RegistroComponent,
     RecuperarContraseñaComponent,
     NuevaContraseñaComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ]
 })
 export class PagesModule { }
