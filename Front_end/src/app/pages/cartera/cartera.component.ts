@@ -42,7 +42,8 @@ export class CarteraComponent implements OnInit, AfterViewInit {
   inputs: Array<HTMLInputElement> = [];
   portfolio!: Array<any>;
   quantity!: number;
-  totalValue!:number
+  totalValue!:number;
+  totalProfit!: number
 
   constructor() { }
 
@@ -70,6 +71,7 @@ export class CarteraComponent implements OnInit, AfterViewInit {
   }
 
   calculateTotal(){
-    this.totalValue = this.portfolio.reduce((a, b) => a + b.profit, 0);
+    this.totalValue = this.portfolio.reduce((a, b) => a + b.lprice * b.quantity, 0);
+    this.totalProfit = this.portfolio.reduce((a, b) => a + b.profit, 0);
   }
 }

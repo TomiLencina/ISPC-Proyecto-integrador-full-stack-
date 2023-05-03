@@ -4,7 +4,14 @@ import { PaginaPruebaComponent } from './pagina-prueba/pagina-prueba.component';
 import { CarteraComponent } from './cartera/cartera.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { RegistroComponent } from './registro/registro.component';
-import { QuienesSomosComponent } from "./quienes-somos/QuienesSomosComponent";
+import { AppRoutingModule } from '../app-routing.module';
+import { RecuperarContraseñaComponent } from './recuperar_contraseña/recuperar-contraseña/recuperar-contraseña.component';
+import { NuevaContraseñaComponent } from './recuperar_contraseña/nueva-contraseña/nueva-contraseña.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { TerminosycondicionesComponent } from './terminosycondiciones/terminosycondiciones.component';
+import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
+
 
 
 
@@ -15,18 +22,28 @@ import { QuienesSomosComponent } from "./quienes-somos/QuienesSomosComponent";
     CarteraComponent,
     PerfilUsuarioComponent,
     RegistroComponent,
+    RecuperarContraseñaComponent,
+    NuevaContraseñaComponent,
+    HomeComponent,
+    LoginComponent,
+    TerminosycondicionesComponent,
     QuienesSomosComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AppRoutingModule
   ],
   exports: [
     PaginaPruebaComponent,
     CarteraComponent,
     PerfilUsuarioComponent,
     RegistroComponent,
+    RecuperarContraseñaComponent,
+    NuevaContraseñaComponent,
+    HomeComponent,
+    LoginComponent,
+    TerminosycondicionesComponent,
     QuienesSomosComponent
-    
   ]
 })
 export class PagesModule { }

@@ -8,19 +8,26 @@
 }
 
 
-body{
+body {
     padding: 0 !important;
     margin: 0 !important;
     background-color: var(--bg-color);
 }
 
+.account-bg {
+    background-color: var(--primary);
+    background-image: linear-gradient(150deg,
+            var(--secondary) 0%,
+            var(--primary) 100%);
+}
 
-a{
+
+a {
     text-decoration: none;
     color: var(--font-color);
 }
 
-a:hover{
+a:hover {
     color: var(--tertiary);
 }
 
@@ -38,5 +45,5 @@ button:hover {
 
     border-color: var(--tertiary) !important;
     background-color: var(--tertiary) !important;
-    
+
 }

@@ -1,6 +1,6 @@
-<!-- Formulario -->
+<!-- Formulario Perfil-->
 
-<section>
+<section class="account-bg py-5">
   <div class="container user__profile mx-auto">
     <h2 class="form__h2">Mi Perfil</h2>
     <form class="form__user" action="">
@@ -8,44 +8,22 @@
         <legend class="form__legend">Datos personales:</legend>
         <br />
         <br />
-        <label class="form__label" for="usuario"
-          >Usuario:
-          <input
-            class="form__input"
-            type="text"
-            name="usuario"
-            id="usuario"
-            required
-            maxlength="20"
-            size="20"
-          />
+        <label class="form__label" for="usuario">Usuario:
+          <input class="form__input" type="text" name="usuario" id="usuario" required maxlength="20" size="20" />
         </label>
         <br />
         <br />
-        <label class="form__label" for="nacionalidad"
-          >Nacionalidad:
-          <input
-            class="form__input"
-            type="text"
-            name="nacionalidad"
-            id="nacionalidad"
-            required
-          />
+        <label class="form__label" for="nacionalidad">Nacionalidad:
+          <input class="form__input" type="text" name="nacionalidad" id="nacionalidad" required />
         </label>
         <br />
         <br />
-        <button
-          type="reset"
-          class="btn btn-primary btn-sm"
-          style="padding-left: 1.5rem; padding-right: 1.5rem; margin: 0.5rem"
-        >
+        <button type="reset" class="btn btn-primary btn-sm"
+          style="padding-left: 1.5rem; padding-right: 1.5rem; margin: 0.5rem">
           Restablecer
         </button>
-        <button
-          type="submit"
-          class="btn btn-primary btn-sm"
-          style="padding-left: 1.5rem; padding-right: 1.5rem; margin: 0.5rem"
-        >
+        <button type="submit" class="btn btn-primary btn-sm"
+          style="padding-left: 1.5rem; padding-right: 1.5rem; margin: 0.5rem">
           Guardar cambios
         </button>
         <br />
@@ -55,17 +33,54 @@
       <fieldset>
         <div id="chng__pass"></div>
         <div id="btn__chng--pass">
-          <button
-            id="btn__chng"
-            type="button"
-            class="btn btn-primary btn-md"
-            style="padding-left: 1.5rem; padding-right: 1.5rem; margin: 0.5rem"
-            onclick="chng__pass()"
-          >
+          <button id="btn__chng" type="button" class="btn btn-primary btn-md"
+            style="padding-left: 1.5rem; padding-right: 1.5rem; margin: 0.5rem" (click)="unhide()">
             Cambiar contraseña
           </button>
         </div>
         <br />
+      </fieldset>
+    </form>
+  </div>
+
+
+
+
+  <!-- Formulario Cambiar Contraseña -->
+
+  <div class="container mx-auto text-center" [ngClass]="{'d-none': isHidden}">
+    <h2 class="form__h2">Cambio de contraseña</h2>
+    <form class="form__user" action="">
+      <fieldset>
+        <legend class="form__legend">Ingresa los siguientes datos:</legend>
+        <br />
+        <label class="form__label" for="password">Contraseña actual:
+        </label>
+        <br />
+        <label>
+          <input class="form__input" type="password" name="password" id="password" required />
+        </label>
+        <br />
+        <br />
+        <label class="form__label" for="new_password">Nueva contraseña:</label>
+        <br />
+        <label for="">
+          <input class="form__input" type="password" name="new_password" id="new_password" required />
+        </label>
+        <br />
+        <br />
+        <label class="form__label" for="confirm_pass">Confirma nueva contraseña:</label>
+        <br />
+        <input class="form__input" type="password" name="confirm_pass" id="confirm_pass" required /> <br /><br />
+        <button type="reset" class="btn btn-primary btn-sm"
+          style="padding-left: 1.5rem; padding-right: 1.5rem; margin: 0.5rem">Restablecer</button>
+        <button type="button" class="btn btn-primary btn-sm"
+          style="padding-left: 1.5rem; padding-right: 1.5rem; margin: 0.5rem" onclick="pass__compare()">Guardar
+          cambios</button>
+        <br />
+        <button type="button" class="btn btn-primary btn-sm"
+          style="padding-left: 1.5rem; padding-right: 1.5rem; margin: 0.5rem" onclick="cancel__chng()">Cancelar
+          Cambio</button>
       </fieldset>
     </form>
   </div>

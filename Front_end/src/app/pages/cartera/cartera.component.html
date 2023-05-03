@@ -3,7 +3,7 @@
   <div class="container container-portfolio mb-5">
     <div class="portfolio ptrf">
       <div class="perfil">
-        <a href="perfilusuario.html"><button type="button" class="btn">Mi Perfil</button></a>
+        <a routerLink="/perfil_usuario" routerLinkActive="active"><button type="button" class="btn">Mi Perfil</button></a>
       </div>
       <div class="table-responsive">
 
@@ -98,11 +98,11 @@
 
             <tr>
               <th scope="row">portfolio Valorizada</th>
-              <td>{{totalValue}}</td>
+              <td>${{totalValue}}</td>
             </tr>
             <tr>
               <th scope="row">Ganancia Neta</th>
-              <td>$3500</td>
+              <td>${{totalProfit}}</td>
             </tr>
             <tr>
               <th scope="row">% Ganancia/Pérdida</th>
