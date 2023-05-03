@@ -10,6 +10,8 @@ import { NuevaContraseñaComponent } from './recuperar_contraseña/nueva-contras
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { TerminosycondicionesComponent } from './terminosycondiciones/terminosycondiciones.component';
+import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
+
 
 
 
@@ -24,7 +26,8 @@ import { TerminosycondicionesComponent } from './terminosycondiciones/terminosyc
     NuevaContraseñaComponent,
     HomeComponent,
     LoginComponent,
-    TerminosycondicionesComponent
+    TerminosycondicionesComponent,
+    QuienesSomosComponent
   ],
   imports: [
     CommonModule,
@@ -39,7 +42,8 @@ import { TerminosycondicionesComponent } from './terminosycondiciones/terminosyc
     NuevaContraseñaComponent,
     HomeComponent,
     LoginComponent,
-    TerminosycondicionesComponent
+    TerminosycondicionesComponent,
+    QuienesSomosComponent
   ]
 })
 export class PagesModule { }

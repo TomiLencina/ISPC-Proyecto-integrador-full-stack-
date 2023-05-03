@@ -1,0 +1,19 @@
+body {
+    background-color: var(--primary);
+    background-image: linear-gradient(150deg, var(--secondary) 0%, var(--primary) 100%);
+    
+}
+
+.quienes-somos-img{
+    max-width:80% ;
+    
+}
+
+.title h1 {
+    text-align: center;
+    margin: 50px auto;
+}
+
+.about-us-img{
+    margin-top: 10px;
+}
