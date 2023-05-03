@@ -38,7 +38,8 @@ import { TerminosycondicionesComponent } from './terminosycondiciones/terminosyc
     RecuperarContraseñaComponent,
     NuevaContraseñaComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    TerminosycondicionesComponent
   ]
 })
 export class PagesModule { }
