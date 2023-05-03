@@ -7,6 +7,7 @@ import { RecuperarContraseñaComponent } from './pages/recuperar_contraseña/rec
 import { NuevaContraseñaComponent } from './pages/recuperar_contraseña/nueva-contraseña/nueva-contraseña.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+import { TerminosycondicionesComponent } from './pages/terminosycondiciones/terminosycondiciones.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,8 @@ const routes: Routes = [
   { path: 'recuperar-contraseña', component: RecuperarContraseñaComponent },
   { path: 'nueva-contraseña', component: NuevaContraseñaComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'terminos_y_condiciones', component: TerminosycondicionesComponent },
+
 
 ];
 
