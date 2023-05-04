@@ -7,6 +7,7 @@ import { RegistroComponent } from './registro/registro.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { RecuperarContraseñaComponent } from './recuperar_contraseña/recuperar-contraseña/recuperar-contraseña.component';
 import { NuevaContraseñaComponent } from './recuperar_contraseña/nueva-contraseña/nueva-contraseña.component';
+import { SuscripcionComponent } from './suscripcion/suscripcion.component';
 
 
 
@@ -18,7 +19,8 @@ import { NuevaContraseñaComponent } from './recuperar_contraseña/nueva-contras
     PerfilUsuarioComponent,
     RegistroComponent,
     RecuperarContraseñaComponent,
-    NuevaContraseñaComponent
+    NuevaContraseñaComponent,
+    SuscripcionComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +32,8 @@ import { NuevaContraseñaComponent } from './recuperar_contraseña/nueva-contras
     PerfilUsuarioComponent,
     RegistroComponent,
     RecuperarContraseñaComponent,
-    NuevaContraseñaComponent
+    NuevaContraseñaComponent,
+    SuscripcionComponent
   ]
 })
 export class PagesModule { }
