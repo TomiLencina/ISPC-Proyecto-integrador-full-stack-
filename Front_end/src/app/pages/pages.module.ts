@@ -7,7 +7,9 @@ import { RegistroComponent } from './registro/registro.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { RecuperarContraseñaComponent } from './recuperar_contraseña/recuperar-contraseña/recuperar-contraseña.component';
 import { NuevaContraseñaComponent } from './recuperar_contraseña/nueva-contraseña/nueva-contraseña.component';
-import { SuscripcionComponent } from './suscripcion/suscripcion.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { TerminosycondicionesComponent } from './terminosycondiciones/terminosycondiciones.component';
 
 
 
@@ -20,7 +22,9 @@ import { SuscripcionComponent } from './suscripcion/suscripcion.component';
     RegistroComponent,
     RecuperarContraseñaComponent,
     NuevaContraseñaComponent,
-    SuscripcionComponent
+    HomeComponent,
+    LoginComponent,
+    TerminosycondicionesComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +37,9 @@ import { SuscripcionComponent } from './suscripcion/suscripcion.component';
     RegistroComponent,
     RecuperarContraseñaComponent,
     NuevaContraseñaComponent,
-    SuscripcionComponent
+    HomeComponent,
+    LoginComponent,
+    TerminosycondicionesComponent
   ]
 })
 export class PagesModule { }
