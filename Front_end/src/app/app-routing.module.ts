@@ -8,6 +8,7 @@ import { NuevaContraseñaComponent } from './pages/recuperar_contraseña/nueva-c
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { TerminosycondicionesComponent } from './pages/terminosycondiciones/terminosycondiciones.component';
+import { SuscripcionComponent } from './pages/suscripcion/suscripcion.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'nueva-contraseña', component: NuevaContraseñaComponent },
   { path: 'login', component: LoginComponent },
   { path: 'terminos_y_condiciones', component: TerminosycondicionesComponent },
+  { path: 'premium', component: SuscripcionComponent},
 
 
 ];
