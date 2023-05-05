@@ -10,6 +10,7 @@ import { NuevaContraseñaComponent } from './recuperar_contraseña/nueva-contras
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { TerminosycondicionesComponent } from './terminosycondiciones/terminosycondiciones.component';
+import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
 import { SuscripcionComponent } from './suscripcion/suscripcion.component';
 
 
@@ -26,6 +27,7 @@ import { SuscripcionComponent } from './suscripcion/suscripcion.component';
     HomeComponent,
     LoginComponent,
     TerminosycondicionesComponent,
+    QuienesSomosComponent,
     SuscripcionComponent
   ],
   imports: [
@@ -42,6 +44,7 @@ import { SuscripcionComponent } from './suscripcion/suscripcion.component';
     HomeComponent,
     LoginComponent,
     TerminosycondicionesComponent,
+    QuienesSomosComponent,
     SuscripcionComponent
   ]
 })
