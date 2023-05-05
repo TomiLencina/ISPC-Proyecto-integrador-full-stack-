@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { TerminosycondicionesComponent } from './pages/terminosycondiciones/terminosycondiciones.component';
 import { QuienesSomosComponent } from './pages/quienes-somos/quienes-somos.component';
+import { SuscripcionComponent } from './pages/suscripcion/suscripcion.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'terminos_y_condiciones', component: TerminosycondicionesComponent },
   { path: 'quienes_somos', component: QuienesSomosComponent },
+  { path: 'premium', component: SuscripcionComponent},
 
 
 ];

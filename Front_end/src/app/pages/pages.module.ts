@@ -11,7 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { TerminosycondicionesComponent } from './terminosycondiciones/terminosycondiciones.component';
 import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
-
+import { SuscripcionComponent } from './suscripcion/suscripcion.component';
 
 
 
@@ -27,7 +27,8 @@ import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
     HomeComponent,
     LoginComponent,
     TerminosycondicionesComponent,
-    QuienesSomosComponent
+    QuienesSomosComponent,
+    SuscripcionComponent
   ],
   imports: [
     CommonModule,
@@ -43,7 +44,8 @@ import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
     HomeComponent,
     LoginComponent,
     TerminosycondicionesComponent,
-    QuienesSomosComponent
+    QuienesSomosComponent,
+    SuscripcionComponent
   ]
 })
 export class PagesModule { }
