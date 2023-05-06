@@ -36,3 +36,21 @@
     en su cartera virtual. El usuario accede a la sección de seguimiento de inversiones en la aplicación 
     y selecciona la inversión deseada. La aplicación muestra información detallada sobre la inversión, 
     como el valor actual, la ganancia o pérdida, el rendimiento diario y el rendimiento total.
+
+8- Cambiar nombre de usuario:  El usuario desea cambiar el nombre de usuario. El usuario inicia sesión y está
+   en la sección de "Perfil de Usuario". El usuario hace clic en el campo "Nombre de usuario" e ingresa un nuevo
+   nombre de usuario y hace clic en el botón "Guardar cambios". Si el usuario desea cancelar el cambio, hace clic 
+   en el botón "Cancelar".
+
+9- Cambiar nacionalidad: El usuario inicia sesión y está en la sección de "Perfil de Usuario". El usuario hace
+   clic en el campo "Nacionalidad" e ingresa una nueva nacionalidad. El usuario hace clic en el botón "Guardar
+   cambios". Si el usuario desea cancelar el cambio, hace clic en el botón "Cancelar".
+
+10- Restablecer perfil de usuario: El usuario inicia sesión y está en la sección de "Perfil de Usuario". El usuario
+    hace clic en el botón "Restablecer". El sistema muestra borra los datos ingresados por el usuario dejando las 
+    casillas limpias.   
+
+11- Cambiar contraseña: El usuario ha iniciado sesión y está en la sección de "Perfil de Usuario". El usuario hace 
+    clic en el botón "Cambiar contraseña". El sistema muestra los campos "Contraseña actual", "Nueva contraseña" y 
+    "Confirmar nueva contraseña". El usuario ingresa su contraseña actual, la nueva contraseña y la confirma. El usuario 
+    hace clic en el botón "Guardar cambios". Si el usuario desea cancelar el cambio, hace clic en el botón "Cancelar".    
