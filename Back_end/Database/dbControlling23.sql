@@ -23,6 +23,7 @@ CREATE TABLE Activo (
 CREATE TABLE Cartera (
     idCartera INT(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     id_Usuario INT(11) UNSIGNED NOT NULL,
+    suscripcion_premium TINYINT(1) NOT NULL,
     FOREIGN KEY (id_Usuario)
         REFERENCES Usuario (idUsuario)
         ON DELETE RESTRICT ON UPDATE RESTRICT
