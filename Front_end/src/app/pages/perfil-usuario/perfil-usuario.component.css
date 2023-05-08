@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body[account] {
+  background-color: var(--primary);
+  background-image: linear-gradient(150deg,
+      var(--secondary) 0%,
+      var(--primary) 100%);
+}
+
+h2 {
+  color: var(--font-color);
+}
+
+.user__profile {
+  text-align: center;
+}
+
+.form__h2 {
+  font-size: 2rem;
+  margin: 1.5%;
+}
+
+.form__input {
+  padding: 0.5%;
+}
+
+.form__label {
+  margin: 1%;
+}
+
+#btn__chng {
+  --secondary: var(--tertiary);
+}
+
+#btn__chng:hover {
+  --tertiary: var(--primary);
+  color: var(--bg-color) !important;
+}

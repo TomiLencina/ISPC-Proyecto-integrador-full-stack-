@@ -1,0 +1,136 @@
+h1 {
+
+    font-weight: 800;
+    color: var(--primary);
+    padding: 1em 0;
+    text-align: center;
+
+}
+
+.container-portfolio {
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+    height: max-content;
+}
+
+.container-portfolio>.ptrf {
+    height: auto;
+    border-radius: 10px;
+    padding: 35px;
+    box-shadow: 1px 1px 5px var(--font-color);
+    background-color: var(--primary-soft);
+}
+
+.portfolio {
+    position: relative;
+    min-width: 70%;
+    flex-grow: 1;
+    height: 100%;
+    background-color: var(--main);
+    white-space: nowrap;
+}
+
+.table-head {
+    background-color: var(--primary);
+
+}
+
+.portfolio-add {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.portfolio-add div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+.portfolio-add input {
+    all: unset;
+    box-sizing: border-box;
+    border: 3px solid var(--font-color);
+    border-radius: 10px;
+    width: 150px;
+    background-color: var(--main);
+    text-align: center;
+}
+
+.add-btn {
+    padding: 3em 0;
+}
+
+.add-btn button {
+    font-weight: bold;
+    border-radius: 15px;
+    width: 50%;
+}
+
+
+.hidden {
+    display: none;
+}
+
+
+.portfolio-resumen {
+    flex-grow: 1;
+    height: 100%;
+    background-color: var(--main);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.resumen-grafico {
+    max-width: 200px;
+}
+
+.perfil {
+    position: absolute;
+    top: -50px;
+    right: 20px;
+    background-color: var(--primary);
+    border-radius: 10px;
+    padding: 1em
+}
+
+
+/*----------Queries----------*/
+
+
+@media screen and (max-width: 1400px) and (min-width: 768px) {
+    .portfolio-resumen {
+        flex-direction: row
+    }
+
+}
+
+@media screen and (min-width: 1400px) and (max-width: 768px) {
+    .portfolio-resumen {
+        align-items: center;
+    }
+
+}
+
+@media screen and (width < 768px) {
+    * {
+        font-size: 12px;
+    }
+}
+
+@media screen and (width < 720px) {
+    .perfil {
+        top: 250px;
+        position: initial;
+        text-align: center;
+        margin-bottom: 2em;
+    }
+}

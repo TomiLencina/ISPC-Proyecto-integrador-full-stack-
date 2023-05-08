@@ -1,0 +1,56 @@
+1-  Agregar una nueva inversión: los usuarios pueden agregar nuevas criptomonedas o acciones
+    a su cartera virtual ingresando el nombre de la inversión, la cantidad comprada,
+    el precio de compra y la fecha de compra. Una vez agregado, la cartera mostrará la
+    información actualizada sobre la inversión, como el valor actual y la ganancia o pérdida.
+
+2- Seguimiento de inversiones: el usuario desea ver el valor actual de todas sus inversiones en un 
+    solo lugar y cómo han cambiado con el tiempo. El usuario accede a la sección de seguimiento de
+    inversiones en la aplicación. La aplicación muestra una lista de todas las inversiones del 
+    usuario con información detallada, como el precio de la inversión, la ganancia o pérdida, 
+    el rendimiento mensual y el rendimiento total.
+
+3- Configurar alertas de precios: el usuario desea recibir notificaciones cuando el precio de un 
+    activo alcance un cierto nivel. El usuario accede a la sección de alertas de precios en la aplicación.
+    El usuario selecciona la criptomoneda o acción y configura el precio/porcentaje que dispara la alerta.
+    La aplicación registra la alerta y envía una notificación al usuario cuando el precio alcanza el 
+    nivel deseado.
+
+4- Editar una inversión existente: el usuario desea actualizar la información de una inversión existente 
+    en su cartera virtual. El usuario accede a la sección de seguimiento de inversiones en la aplicación y 
+    selecciona la inversión a editar. El usuario actualiza la información de la inversión, como la cantidad
+    comprada, el precio de compra y la fecha de compra. La aplicación actualiza la información de la 
+    inversión y de la cartera.
+
+5- Configurar alertas de precios: el usuario desea recibir notificaciones cuando el precio de un 
+    activo alcance un cierto nivel. El usuario accede a la sección de alertas de precios en la aplicación.
+    El usuario selecciona la criptomoneda o acción y configura el precio/porcentaje que dispara la alerta.
+    La aplicación registra la alerta y envía una notificación al usuario cuando el precio alcanza el 
+    nivel deseado.
+
+6- Eliminar una inversión: el usuario desea eliminar una inversión existente de su cartera virtual. 
+    El usuario accede a la sección de seguimiento de inversiones en la aplicación y selecciona la inversión 
+    a eliminar. El usuario confirma la eliminación y la aplicación elimina la inversión de la cartera y 
+    actualiza la información.
+
+7- Ver detalles de una inversión: el usuario desea ver los detalles de una inversión específica 
+    en su cartera virtual. El usuario accede a la sección de seguimiento de inversiones en la aplicación 
+    y selecciona la inversión deseada. La aplicación muestra información detallada sobre la inversión, 
+    como el valor actual, la ganancia o pérdida, el rendimiento diario y el rendimiento total.
+
+8- Cambiar nombre de usuario:  El usuario desea cambiar el nombre de usuario. El usuario inicia sesión y está
+   en la sección de "Perfil de Usuario". El usuario hace clic en el campo "Nombre de usuario" e ingresa un nuevo
+   nombre de usuario y hace clic en el botón "Guardar cambios". Si el usuario desea cancelar el cambio, hace clic 
+   en el botón "Cancelar".
+
+9- Cambiar nacionalidad: El usuario inicia sesión y está en la sección de "Perfil de Usuario". El usuario hace
+   clic en el campo "Nacionalidad" e ingresa una nueva nacionalidad. El usuario hace clic en el botón "Guardar
+   cambios". Si el usuario desea cancelar el cambio, hace clic en el botón "Cancelar".
+
+10- Restablecer perfil de usuario: El usuario inicia sesión y está en la sección de "Perfil de Usuario". El usuario
+    hace clic en el botón "Restablecer". El sistema muestra borra los datos ingresados por el usuario dejando las 
+    casillas limpias.   
+
+11- Cambiar contraseña: El usuario ha iniciado sesión y está en la sección de "Perfil de Usuario". El usuario hace 
+    clic en el botón "Cambiar contraseña". El sistema muestra los campos "Contraseña actual", "Nueva contraseña" y 
+    "Confirmar nueva contraseña". El usuario ingresa su contraseña actual, la nueva contraseña y la confirma. El usuario 
+    hace clic en el botón "Guardar cambios". Si el usuario desea cancelar el cambio, hace clic en el botón "Cancelar".    
