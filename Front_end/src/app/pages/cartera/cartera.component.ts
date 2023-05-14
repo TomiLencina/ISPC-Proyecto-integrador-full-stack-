@@ -60,7 +60,7 @@ export class CarteraComponent implements OnInit, AfterViewInit {
 
     this.portfolio = listaDeActivosComprados;
 
-    this.requestServices.getPortfolioById(1).subscribe((res) => {
+    this.requestServices.getPortfolioById(2).subscribe((res) => {
       console.log(res);
 
       this.portfolio = res.activos
