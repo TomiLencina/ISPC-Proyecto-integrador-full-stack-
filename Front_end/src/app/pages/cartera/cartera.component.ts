@@ -5,20 +5,13 @@ class Asset {
 
   simbolo: string;
   broker: string;
-<<<<<<< HEAD
   fecha_compra!: Date
-=======
-  fecha_compra!:Date
->>>>>>> 523706921dab1322d500573b47b5fc3efe5cc54d
   precio_compra: number;
   cantidad: number;
   ultimo_precio: number;
 
-<<<<<<< HEAD
-  constructor(simbolo: string, broker: string, fecha_compra: Date, precio_compra: number, cantidad: number, ultimo_precio: number) {
-=======
   constructor(simbolo:string, broker: string, fecha_compra:Date, precio_compra: number, cantidad: number, ultimo_precio: number) {
->>>>>>> 523706921dab1322d500573b47b5fc3efe5cc54d
+
 
     this.simbolo = simbolo,
       this.broker = broker,
@@ -63,8 +56,7 @@ export class CarteraComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
 
-<<<<<<< HEAD
-=======
+
 
     this.portfolio = listaDeActivosComprados;
 
@@ -73,7 +65,6 @@ export class CarteraComponent implements OnInit, AfterViewInit {
 
       this.portfolio = res.activos
     })
->>>>>>> 523706921dab1322d500573b47b5fc3efe5cc54d
 
     this.portfolio = listaDeActivosComprados;
 
@@ -95,7 +86,7 @@ export class CarteraComponent implements OnInit, AfterViewInit {
   }
 
   calculateTotal() {
-<<<<<<< HEAD
+
     this.totalValue = this.portfolio.reduce((a, b) => a + b.ultimo_precio * b.cantidad, 0);
     this.totalProfit = this.portfolio.reduce((a, b) => a + (b.ultimo_precio - b.precio_compra) * b.cantidad, 0);
   }
@@ -106,19 +97,11 @@ export class CarteraComponent implements OnInit, AfterViewInit {
 
   getProfitPerc(asset: any): number {
     return Number((this.getProfit(asset) / (asset.precio_compra * asset.cantidad) * 100).toFixed(2))
-=======
+
     this.totalValue = this.portfolio.reduce((a, b) => a + b.ultimo_precio * b.quantity, 0);
     this.totalProfit = this.portfolio.reduce((a, b) => a + (b.ultimo_precio - b.precio_compra) * b.cantidad, 0);
   }
 
-  getProfit(asset:any) : number {
-    return (asset.ultimo_precio - asset.precio_compra) * asset.cantidad
-  }
-
-  getProfitPerc(asset:any) : number {
-    return Number((this.getProfit(asset)/(asset.precio_compra * asset.cantidad) * 100).toFixed(2))
->>>>>>> 523706921dab1322d500573b47b5fc3efe5cc54d
-  }
 }
 
 
