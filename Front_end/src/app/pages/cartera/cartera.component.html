@@ -21,13 +21,13 @@
           </thead>
           <tbody class="table-group-divider">
             <tr *ngFor="let asset of portfolio">
-              <th scope="row">{{asset.symbol}}</th>
-              <td>{{asset.exchange}}</td>
-              <td>${{asset.bprice}}</td>
-              <td>{{asset.quantity}}</td>
-              <td>${{asset.lprice}}</td>
-              <td [ngStyle]="asset.profit >= 0 ? {'color':'green'}:{'color':'red'} ">${{asset.profit}}</td>
-              <td [ngStyle]="asset.profitPer >= 0 ? {'color':'green'}:{'color':'red'} ">%{{asset.profitPer}}</td>
+              <th scope="row">{{asset.simbolo}}</th>
+              <td>{{asset.broker}}</td>
+              <td>${{asset.precio_compra}}</td>
+              <td>{{asset.cantidad}}</td>
+              <td>${{asset.ultimo_precio}}</td>
+              <td [ngStyle]="getProfit(asset)>= 0 ? {'color':'green'}:{'color':'red'} ">${{getProfit(asset)}}</td>
+              <td [ngStyle]="getProfitPerc(asset) >= 0 ? {'color':'green'}:{'color':'red'} ">%{{getProfitPerc(asset)}}</td>
             </tr>
 
           </tbody>
