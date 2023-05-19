@@ -28,7 +28,7 @@ const routes: Routes = [
   { path: 'terminos_y_condiciones', component: TerminosycondicionesComponent },
   { path: 'quienes_somos', component: QuienesSomosComponent },
   { path: 'premium', component: SuscripcionComponent},
-  { path: 'noticias_de_las_inversiones', component: NoticiasDeInversionesComponent},
+  { path: 'noticias', component: NoticiasDeInversionesComponent},
   
 
 

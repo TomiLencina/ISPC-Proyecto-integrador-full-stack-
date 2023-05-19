@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './noticias-de-inversiones.component.html',
   styleUrls: ['./noticias-de-inversiones.component.css']
 })
-exports:[NoticiasDeInversionesComponent]
-
 
 export class NoticiasDeInversionesComponent {
 
