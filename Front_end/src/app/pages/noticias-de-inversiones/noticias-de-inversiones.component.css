@@ -1,0 +1,10 @@
+body {
+    background-color: var(--primary);
+    background-image: linear-gradient(150deg, var(--secondary) 0%, var(--primary) 100%);
+    
+}
+
+.descarga-img{
+    max-width:80% ;
+    
+}
