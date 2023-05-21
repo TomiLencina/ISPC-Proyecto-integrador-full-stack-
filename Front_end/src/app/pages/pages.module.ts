@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { TerminosycondicionesComponent } from './terminosycondiciones/terminosycondiciones.component';
 import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
 import { SuscripcionComponent } from './suscripcion/suscripcion.component';
+import { NoticiasDeInversionesComponent } from './noticias-de-inversiones/noticias-de-inversiones.component';
 
 
 
@@ -28,7 +29,8 @@ import { SuscripcionComponent } from './suscripcion/suscripcion.component';
     LoginComponent,
     TerminosycondicionesComponent,
     QuienesSomosComponent,
-    SuscripcionComponent
+    SuscripcionComponent,
+    NoticiasDeInversionesComponent
   ],
   imports: [
     CommonModule,
@@ -45,7 +47,9 @@ import { SuscripcionComponent } from './suscripcion/suscripcion.component';
     LoginComponent,
     TerminosycondicionesComponent,
     QuienesSomosComponent,
-    SuscripcionComponent
+    SuscripcionComponent,
+    NoticiasDeInversionesComponent
+    
   ]
-})
+  })
 export class PagesModule { }

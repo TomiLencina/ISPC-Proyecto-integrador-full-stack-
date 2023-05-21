@@ -1,0 +1,41 @@
+:root {
+    --bg-color: #F3EEF4;
+    --primary: #984eF3;
+    --primary-soft: #eee6f8;
+    --secondary: #4fc4cf;
+    --tertiary: #fbdd74;
+    --font-color: #181818;
+}
+
+.texto {
+    background-color: var(--primary);
+    background-image: linear-gradient(150deg, var(--secondary) 0%, var(--primary) 100%);
+    
+}
+
+.descarga-img{
+    max-width:80% ;
+    
+}
+
+h1 {
+    text-align: center;
+    margin: 50px auto;
+    color: #181818;
+}
+
+h2 {
+    text-align: center;
+    margin: 50px auto;
+    color: #fbdd74;
+}
+
+h3 {
+    text-align: center;
+    margin: 50px auto;
+    color: aqua;
+}
+
+.about-us-img{
+    margin-top: 10px;
+}
