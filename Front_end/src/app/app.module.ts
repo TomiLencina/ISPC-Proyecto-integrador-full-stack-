@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
 import { PagesModule } from './pages/pages.module';
 
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 
@@ -19,6 +21,7 @@ import { PagesModule } from './pages/pages.module';
     AppRoutingModule,
     LayoutModule,
     PagesModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
