@@ -1,0 +1,28 @@
+{
+  "activos": [
+    {
+      "simbolo": "AMZ",
+      "cantidad": 10,
+      "fecha_compra": "2021-03-20",
+      "precio_compra": 3000,
+      "ultimo_precio": 3500,
+      "broker": "Invertir Online"
+    },
+    {
+      "simbolo": "GGAL",
+      "cantidad": 500,
+      "fecha_compra": "2020-06-15",
+      "precio_compra": 90,
+      "ultimo_precio": 120,
+      "broker": "Bull Market"
+    },
+    {
+      "simbolo": "ETH",
+      "cantidad": 3,
+      "fecha_compra": "2021-02-10",
+      "precio_compra": 1500,
+      "ultimo_precio": 3500,
+      "broker": "Binance"
+    }
+  ]
+}

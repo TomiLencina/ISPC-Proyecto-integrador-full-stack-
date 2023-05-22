@@ -7,7 +7,9 @@ import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
 import { PagesModule } from './pages/pages.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ServicioActivoService } from './services/servicio-activo.service';
 import { UserService } from './service/user.service';
+
 
 
 @NgModule({
@@ -20,7 +22,12 @@ import { UserService } from './service/user.service';
     HttpClientModule,
 
   ],
-  providers: [UserService],
-  bootstrap: [AppComponent],
+  
+  providers: [ 
+    // Registrar servicio
+    ServicioActivoService,
+    UserService],
+  bootstrap: [AppComponent]
+
 })
 export class AppModule {}
