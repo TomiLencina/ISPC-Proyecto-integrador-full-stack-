@@ -6,21 +6,19 @@ import { AppComponent } from './app.component';
 
 import { LayoutModule } from './layout/layout.module';
 import { PagesModule } from './pages/pages.module';
-
-
-
+import { HttpClientModule } from '@angular/common/http';
+import { UserService } from './service/user.service';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     LayoutModule,
     PagesModule,
+    HttpClientModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [UserService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
