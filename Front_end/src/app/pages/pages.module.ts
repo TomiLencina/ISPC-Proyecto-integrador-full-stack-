@@ -13,10 +13,15 @@ import { TerminosycondicionesComponent } from './terminosycondiciones/terminosyc
 import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
 import { SuscripcionComponent } from './suscripcion/suscripcion.component';
 import { NoticiasDeInversionesComponent } from './noticias-de-inversiones/noticias-de-inversiones.component';
+import { ApirequestService } from '../services/apirequest.service';
 
 
 
 @NgModule({
+
+  providers: [
+    ApirequestService
+  ], 
   declarations: [
 
     PaginaPruebaComponent,
