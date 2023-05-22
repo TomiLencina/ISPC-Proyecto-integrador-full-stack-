@@ -9,6 +9,7 @@ import { PagesModule } from './pages/pages.module';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './service/user.service';
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -17,6 +18,7 @@ import { UserService } from './service/user.service';
     LayoutModule,
     PagesModule,
     HttpClientModule,
+
   ],
   providers: [UserService],
   bootstrap: [AppComponent],
