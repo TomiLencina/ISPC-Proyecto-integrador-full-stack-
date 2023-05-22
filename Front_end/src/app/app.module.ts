@@ -8,6 +8,7 @@ import { LayoutModule } from './layout/layout.module';
 import { PagesModule } from './pages/pages.module';
 
 import { HttpClientModule } from '@angular/common/http';
+import { ServicioActivoService } from './services/servicio-activo.service';
 
 
 
@@ -23,7 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
     PagesModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ 
+    // Registrar servicio
+    ServicioActivoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

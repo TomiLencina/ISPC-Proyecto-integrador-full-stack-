@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ApirequestService } from 'src/app/services/apirequest.service';
+import { ServicioActivoService } from 'src/app/services/servicio-activo.service';
 
 class Asset {
 
@@ -13,7 +14,7 @@ class Asset {
   constructor(simbolo:string, broker: string, fecha_compra:Date, precio_compra: number, cantidad: number, ultimo_precio: number) {
 
 
-    this.simbolo = simbolo,
+      this.simbolo = simbolo,
       this.broker = broker,
       this.precio_compra = precio_compra,
       this.cantidad = cantidad,
@@ -22,13 +23,15 @@ class Asset {
 }
 
 
+
+
 @Component({
   selector: 'app-cartera',
   templateUrl: './cartera.component.html',
   styleUrls: ['./cartera.component.css']
 })
 
-
+ 
 
 
 export class CarteraComponent implements OnInit, AfterViewInit {
