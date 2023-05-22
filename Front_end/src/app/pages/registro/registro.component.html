@@ -1,68 +1,127 @@
 <section class="account-bg">
   <div class="contenedor-imagen py-5">
-    <img src="assets/logo.jpg" alt="Logo-principal" class="imagen">
+    <img src="assets/logo.jpg" alt="Logo-principal" class="imagen" />
   </div>
   <section class="vh-50">
     <div class="container-fluid h-custom pb-5">
       <div class="row d-flex justify-content-center align-items-center h-100">
-
         <div class="col-md-8 col-lg-6 col-xl-4">
-          <form action="" name="f1">
-
+          <form id="registroForm">
             <!-- Usuario input -->
             <div class="form-outline mb-3">
-              <input type="text" id="user" class="form-control form-control-lg" placeholder="Usuario"
-                pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" title="Usuario: Solo acepta letras y espacios en blanco"
-                required />
-              <label for="user" class="form-label">Ingrese un nombre de usuario</label>
+              
+              <input
+                type="text"
+                id="user"
+                class="form-control form-control-lg"
+                placeholder="Usuario"
+                pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                title="Usuario: Solo acepta letras y espacios en blanco"
+                required
+                (input)="updateUser($event)"
+                [value]="user"
+                name="user"
+              />
+              <label for="user" class="form-label"
+                >Ingrese un nombre de usuario</label
+              >
+
             </div>
 
             <!-- Nacionalidad input -->
             <div class="form-outline mb-3">
-              <input type="text" id="nacionality" class="form-control form-control-lg" placeholder="Nacionalidad"
-                pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" title="Nacionalidad: Solo acepta letras y espacios en blanco"
-                required />
-              <label for="nacionality" class="form-label">Ingrese su nacionalidad</label>
+              <input
+                type="text"
+                id="nacionality"
+                class="form-control form-control-lg"
+                placeholder="Nacionalidad"
+                pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                title="Nacionalidad: Solo acepta letras y espacios en blanco"
+                required
+                (input)="updateNacionality($event)"
+                [value]="nacionality"
+                name="nacionality"
+              />
+              <label for="nacionality" class="form-label"
+                >Ingrese su nacionalidad</label
+              >
             </div>
 
             <!-- Email input -->
             <div class="form-outline mb-3">
-              <input type="email" class="form-control form-control-lg" placeholder="Correo electrónico"
-                pattern="^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$" title="Formato de correo inválido" required />
+              <input
+                type="email"
+                class="form-control form-control-lg"
+                placeholder="Correo electrónico"
+                pattern="^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$"
+                title="Formato de correo inválido"
+                required
+                (input)="updateEmail($event)"
+                [value]="email"
+                name="email"
+              />
               <label class="form-label">Ingrese su correo electrónico</label>
             </div>
 
             <!-- Password input -->
             <div class="form-outline mb-3">
-              <input type="password" name="password1" id="password1" class="form-control form-control-lg"
-                placeholder="Contraseña" required />
-              <label for="password1" class="form-label">Ingrese una contraseña</label>
+              <input
+                type="password"
+                name="password1"
+                id="password1"
+                class="form-control form-control-lg"
+                placeholder="Contraseña"
+                required
+                (input)="updatePassword1($event)"
+                [value]="password1"
+                name="password1"
+              />
+              <label for="password1" class="form-label"
+                >Ingrese una contraseña</label
+              >
             </div>
 
             <!-- Password2 input -->
             <div class="form-outline mb-3">
-              <input type="password" name="password2" id="password2" class="form-control form-control-lg"
-                placeholder="Contraseña" required />
-              <label for="password2" class="form-label">Ingrese nuevamente la contraseña</label>
+              <input
+                type="password"
+                name="password2"
+                id="password2"
+                class="form-control form-control-lg"
+                placeholder="Contraseña"
+                required
+                (input)="updatePassword2($event)"
+                [value]="password2"
+                name="password2"
+              />
+              <label for="password2" class="form-label"
+                >Ingrese nuevamente la contraseña</label
+              >
             </div>
 
             <div class="d-flex justify-content-center align-items-center">
-
               <div class="text-center text-lg mt-4 pt-2">
-                <button type="submit" value="Comprobar si son iguales" onclick="comprobarClave()"
+                <button
                   class="btn btn-primary btn-lg"
-                  style="padding-left: 2.5rem; padding-right: 2.5rem;">Registrarse</button>
-                <p class="small fw-bold mt-2 pt-1 mb-0">¿Ya eres usuario?
-                  <a routerLink="/login" routerLinkActive="active" class="link-danger">Inicia
-                    Sesión</a>
+                  (click)="onSubmit()"
+                  style="padding-left: 2.5rem; padding-right: 2.5rem"
+                >
+                  Registrarse
+                </button>
+                <p class="small fw-bold mt-2 pt-1 mb-0">
+                  ¿Ya eres usuario?
+                  <a
+                    routerLink="/login"
+                    routerLinkActive="active"
+                    class="link-danger"
+                    >Inicia Sesión</a
+                  >
                 </p>
               </div>
-
-
-
             </div>
           </form>
         </div>
       </div>
     </div>
   </section>
+</section>
