@@ -1,7 +1,14 @@
-.custom-footer{
+.custom-footer {
     text-align: center;
     width: 100vw;
     height: 200px;
     background-color: var(--font-color);
+}
 
+.custom-footer * {
+    color: var(--bg-color);
+}
+
+.custom-footer a:hover{
+    color: var(--tertiary);
 }
