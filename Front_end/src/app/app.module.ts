@@ -9,6 +9,7 @@ import { PagesModule } from './pages/pages.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ServicioActivoService } from './services/servicio-activo.service';
 import { UserService } from './service/user.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -20,7 +21,8 @@ import { UserService } from './service/user.service';
     LayoutModule,
     PagesModule,
     HttpClientModule,
-
+    ReactiveFormsModule,
+    FormsModule,
   ],
   
   providers: [ 

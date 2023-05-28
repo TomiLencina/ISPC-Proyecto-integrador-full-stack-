@@ -1,66 +1,51 @@
-import { Component } from '@angular/core';
-import { UserService } from 'src/app/service/user.service';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.css'],
+  styleUrls: ['./registro.component.css']
 })
-export class RegistroComponent {
-  user: string = '';
-  nacionality: string = '';
-  email: string = '';
-  password1: string = '';
-  password2: string = '';
+export class RegistroComponent implements OnInit {
+  registrationForm!: FormGroup;
 
-  constructor(private userService: UserService) {}
+  constructor(private formBuilder: FormBuilder) { }
 
-  updateUser(event: Event) {
-    const inputValue = (event.target as HTMLInputElement).value;
-    this.user = inputValue;
+  ngOnInit() {
+    this.registrationForm = this.formBuilder.group({
+      user: ['', [Validators.required]],
+      nacionality: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      password1: ['', [Validators.required,Validators.minLength(6)]],
+      password2: ['', Validators.required]
+    });
   }
-  updateNacionality(event: Event) {
-    const inputValue = (event.target as HTMLInputElement).value;
-    this.nacionality = inputValue;
+
+  get user() {
+    return this.registrationForm.get('user')?.invalid && this.registrationForm.get('user')?.touched;
   }
-  updateEmail(event: Event) {
-    const inputValue = (event.target as HTMLInputElement).value;
-    this.email = inputValue;
+
+  get nacionality() {
+    return this.registrationForm.get('nacionality')?.invalid && this.registrationForm.get('nacionality')?.touched;
   }
-  updatePassword1(event: Event) {
-    const inputValue = (event.target as HTMLInputElement).value;
-    this.password1 = inputValue;
+
+  get email() {
+    return this.registrationForm.get('email')?.invalid && this.registrationForm.get('email')?.touched;
   }
-  updatePassword2(event: Event) {
-    const inputValue = (event.target as HTMLInputElement).value;
-    this.password2 = inputValue;
+
+  get password1() {
+    return this.registrationForm.get('password1')?.invalid && this.registrationForm.get('password1')?.touched;
+  }
+
+  get password2() {
+    return this.registrationForm.get('password2')?.invalid && this.registrationForm.get('password2')?.touched;
   }
 
   onSubmit() {
-    const jsonData = {
-      user: this.user,
-      nacionality: this.nacionality,
-      email: this.email,
-      password: this.password1,
-      password2: this.password2,
-    };
-    this.userService
-      .createUser(
-        jsonData.user,
-        jsonData.nacionality,
-        jsonData.email,
-        jsonData.password,
-        jsonData.password2
-      )
-      .subscribe(
-        (response) => {
-          console.log('El usuario ha sido creado exitosamente.');
-          console.log('Respuesta del servicio:', response);
-        },
-        (error) => {
-          console.error('Ha ocurrido un error al crear el usuario.');
-          console.error('Error:', error);
-        }
-      );
+    if (this.registrationForm.invalid) {
+      return
+    } 
+     console.log(this.registrationForm.value);
+
   }
 }
