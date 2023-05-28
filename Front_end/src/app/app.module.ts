@@ -7,8 +7,7 @@ import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
 import { PagesModule } from './pages/pages.module';
 import { HttpClientModule } from '@angular/common/http';
-import { ServicioActivoService } from './services/servicio-activo.service';
-import { UserService } from './service/user.service';
+
 
 
 
@@ -22,12 +21,11 @@ import { UserService } from './service/user.service';
     HttpClientModule,
 
   ],
-  
-  providers: [ 
-    // Registrar servicio
-    ServicioActivoService,
-    UserService],
+
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 
 })
-export class AppModule {}
+export class AppModule { }

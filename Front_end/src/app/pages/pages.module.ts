@@ -14,13 +14,17 @@ import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
 import { SuscripcionComponent } from './suscripcion/suscripcion.component';
 import { NoticiasDeInversionesComponent } from './noticias-de-inversiones/noticias-de-inversiones.component';
 import { ApirequestService } from '../services/apirequest.service';
+import { UserService } from '../services/user.service';
+import { ServicioActivoService } from '../services/servicio-activo.service';
 
 
 
 @NgModule({
 
   providers: [
-    ApirequestService
+    ApirequestService,
+    UserService,
+    ServicioActivoService
   ], 
   declarations: [
 
