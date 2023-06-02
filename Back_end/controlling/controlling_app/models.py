@@ -1,14 +1,18 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 
-class User(models.Model):
-    email = models.EmailField(max_length=50)
-    password = models.CharField(max_length=20)
-    alias = models.CharField(max_length=20)
+class User(AbstractUser):
+    email = models.EmailField(max_length=50, unique=True)
+    # password = models.CharField(max_length=20)
+    # alias = models.CharField(max_length=20)
     nationality = models.CharField(max_length=3)
 
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username','password']
+
     def __str__(self):
-        return f"User: {self.alias} from {self.nationality}, email: {self.email}"
+        return f"User: {self.username} from {self.nationality}, email: {self.email}"
 
 
 class Portfolio(models.Model):
