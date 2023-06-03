@@ -8,7 +8,7 @@ import { LayoutModule } from './layout/layout.module';
 import { PagesModule } from './pages/pages.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ServicioActivoService } from './services/servicio-activo.service';
-import { UserService } from './service/user.service';
+import { UserService } from './services/user.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
