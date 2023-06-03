@@ -24,12 +24,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     FormsModule,
   ],
-  
-  providers: [ 
-    // Registrar servicio
-    ServicioActivoService,
-    UserService],
+
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 
 })
-export class AppModule {}
+export class AppModule { }
