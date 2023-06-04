@@ -3,7 +3,8 @@
   <div class="container container-portfolio mb-5">
     <div class="portfolio ptrf">
       <div class="perfil">
-        <a routerLink="/perfil_usuario" routerLinkActive="active"><button type="button" class="btn">Mi Perfil</button></a>
+        <a routerLink="/perfil_usuario" routerLinkActive="active"><button type="button" class="btn">Mi
+            Perfil</button></a>
       </div>
       <div class="table-responsive">
 
@@ -21,13 +22,21 @@
           </thead>
           <tbody class="table-group-divider">
             <tr *ngFor="let asset of portfolio">
-              <th scope="row">{{asset.simbolo}}</th>
-              <td>{{asset.broker}}</td>
-              <td>${{asset.precio_compra}}</td>
-              <td>{{asset.cantidad}}</td>
-              <td>${{asset.ultimo_precio}}</td>
+
+
+              <th scope="row" [attr.contenteditable]="true" (input)="onCellEdit($event, asset, 'simbolo')">
+                {{asset.simbolo}}</th>
+              <td [attr.contenteditable]="true" (input)="onCellEdit($event, asset, 'broker')">{{asset.broker}}</td>
+              <td [attr.contenteditable]="true" (input)="onCellEdit($event, asset, 'precio_compra')">
+                ${{asset.precio_compra}}</td>
+              <td [attr.contenteditable]="true" (input)="onCellEdit($event, asset, 'cantidad')">{{asset.cantidad}}</td>
+              <td [attr.contenteditable]="true" (input)="onCellEdit($event, asset, 'ultimo_precio')">
+                ${{asset.ultimo_precio}}</td>
+
+
               <td [ngStyle]="getProfit(asset)>= 0 ? {'color':'green'}:{'color':'red'} ">${{getProfit(asset)}}</td>
-              <td [ngStyle]="getProfitPerc(asset) >= 0 ? {'color':'green'}:{'color':'red'} ">%{{getProfitPerc(asset)}}</td>
+              <td [ngStyle]="getProfitPerc(asset) >= 0 ? {'color':'green'}:{'color':'red'} ">%{{getProfitPerc(asset)}}
+              </td>
             </tr>
 
           </tbody>

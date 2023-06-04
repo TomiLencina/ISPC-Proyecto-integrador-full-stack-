@@ -26,8 +26,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
 
   providers: [
-
-  ],
+    // Registrar servicio
+    ServicioActivoService,
+    UserService],
   bootstrap: [AppComponent]
 
 })

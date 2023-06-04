@@ -31,7 +31,7 @@ class Asset {
   styleUrls: ['./cartera.component.css']
 })
 
- 
+
 
 
 export class CarteraComponent implements OnInit, AfterViewInit {
@@ -103,6 +103,12 @@ export class CarteraComponent implements OnInit, AfterViewInit {
 
     this.totalValue = this.portfolio.reduce((a, b) => a + b.ultimo_precio * b.quantity, 0);
     this.totalProfit = this.portfolio.reduce((a, b) => a + (b.ultimo_precio - b.precio_compra) * b.cantidad, 0);
+  }
+
+  onCellEdit(event: any, asset: any, property: string) {
+    const newValue = event.target.textContent;
+    asset[property] = newValue;
+    this.calculateTotal();
   }
 
 }
