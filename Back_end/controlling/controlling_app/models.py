@@ -2,13 +2,20 @@ from django.db import models
 
 
 class User(models.Model):
+    SUBSCRIPTION_CHOICES = (
+        ('free', 'Free'),
+        ('monthly', 'Monthly'),
+        ('annual', 'Annual'),
+    )
+
     email = models.EmailField(max_length=50)
     password = models.CharField(max_length=20)
     alias = models.CharField(max_length=20)
     nationality = models.CharField(max_length=3)
+    subscription = models.CharField(max_length=10, choices=SUBSCRIPTION_CHOICES, default='free')
 
     def __str__(self):
-        return f"User: {self.alias} from {self.nationality}, email: {self.email}"
+        return f"User: {self.alias} from {self.nationality}, email: {self.email}, subscription: {self.subscription}"
 
 
 class Portfolio(models.Model):
