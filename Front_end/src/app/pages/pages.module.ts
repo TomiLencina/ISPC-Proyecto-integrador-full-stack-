@@ -16,6 +16,7 @@ import { NoticiasDeInversionesComponent } from './noticias-de-inversiones/notici
 import { ApirequestService } from '../services/apirequest.service';
 import { UserService } from '../services/user.service';
 import { ServicioActivoService } from '../services/servicio-activo.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -43,7 +44,8 @@ import { ServicioActivoService } from '../services/servicio-activo.service';
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   exports: [
     PaginaPruebaComponent,

@@ -1,52 +1,74 @@
+import { Component } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Form, FormBuilder, FormGroup } from '@angular/forms';
+import { Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-registro',
-  templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.css']
+    selector: 'app-registro',
+    templateUrl: './registro.component.html',
+    styleUrls: ['./registro.component.css'],
 })
-export class RegistroComponent implements OnInit {
-  registrationForm!: FormGroup;
+export class RegistroComponent {
 
-  constructor(private formBuilder: FormBuilder) { }
+    confirmPass!: string
+    registryForm: FormGroup
 
-  ngOnInit() {
-    this.registrationForm = this.formBuilder.group({
-      user: ['', [Validators.required]],
-      nacionality: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
-      password1: ['', [Validators.required,Validators.minLength(6)]],
-      password2: ['', Validators.required]
-    });
-  }
+    constructor(private formBuilder: FormBuilder) {
+    
+        this.registryForm = this.formBuilder.group(
+            {
+                password: ["", [Validators.required, Validators.minLength(4)]],
+                confirmPassword: ["", [Validators.required]],
+                email: ["", [Validators.required, Validators.email]],
+                nationality: ["", [Validators.required]],
+                username: ["", [Validators.required]],
+            }
+        )
 
-  get user() {
-    return this.registrationForm.get('user')?.invalid && this.registrationForm.get('user')?.touched;
-  }
 
-  get nacionality() {
-    return this.registrationForm.get('nacionality')?.invalid && this.registrationForm.get('nacionality')?.touched;
-  }
+    }
 
-  get email() {
-    return this.registrationForm.get('email')?.invalid && this.registrationForm.get('email')?.touched;
-  }
+    compare() {
+        
+        if (this.registryForm.controls['password'].value != this.confirmPass) {
 
-  get password1() {
-    return this.registrationForm.get('password1')?.invalid && this.registrationForm.get('password1')?.touched;
-  }
+            this.registryForm.controls['confirmPassword'].setErrors({ 'incorrect': true });
+        }
 
-  get password2() {
-    return this.registrationForm.get('password2')?.invalid && this.registrationForm.get('password2')?.touched;
-  }
+    }
 
-  onSubmit() {
-    if (this.registrationForm.invalid) {
-      return
-    } 
-     console.log(this.registrationForm.value);
+    get Email() {
+        return this.registryForm.get("email")
+    }
 
-  }
+    get Password() {
+        return this.registryForm.get("password")
+    }
+
+    get ConfirmPassword() {
+        return this.registryForm.get("confirmPassword")
+    }
+
+    get Nationality() {
+        return this.registryForm.get("nationality")
+    }
+
+    get Username() {
+        return this.registryForm.get("username")
+    }
+
+    onSubmit(event: Event){
+        event.preventDefault();
+        if (this.registryForm.valid){
+        
+            //Make the request with formdata
+            
+        }else{
+
+            //Validate fields 
+            this.registryForm.markAllAsTouched()
+        }
+        
+    }
+
 }

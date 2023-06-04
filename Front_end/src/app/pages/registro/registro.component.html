@@ -6,90 +6,106 @@
     <div class="container-fluid h-custom pb-5">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-md-8 col-lg-6 col-xl-4">
-          
-            <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-                <!-- Usuario input -->
-                <div class="form-outline mb-3">
-                  <input
-                    type="text"
-                    id="user"
-                    class="form-control form-control-lg"
-                    placeholder="Usuario"
-                    formControlName="user"
-                    [class.is-invalid]="user.invalid && (user.dirty || user.touched)"
-                  />
-                  <label for="user" class="form-label">Ingrese un nombre de usuario</label>
-                  <div *ngIf="user.invalid && (user.dirty || user.touched)">
-                    <small class="text-danger" *ngIf="user.errors.required">Ingrese un nombre de usuario.</small>
-                  </div>
-                </div>
-    
-                <!-- Nacionalidad input -->
-                <div class="form-outline mb-3">
-                  <input
-                    type="text"
-                    id="nacionality"
-                    class="form-control form-control-lg"
-                    placeholder="Nacionalidad"
-                    formControlName="nacionality"
-                    [class.is-invalid]="nacionality.invalid && (nacionality.dirty || nacionality.touched)"
-                  />
-                  <label for="nacionality" class="form-label">Ingrese su nacionalidad</label>
-                  <div *ngIf="nacionality.invalid && (nacionality.dirty || nacionality.touched)">
-                    <small class="text-danger"> Solo acepta letras y espacios en blanco.</small>
-                  </div>
-                </div>
-    
-                <!-- Email input -->
-                <div class="form-outline mb-3">
-                  <input
-                    type="email"
-                    id="email"
-                    class="form-control form-control-lg"
-                    placeholder="Correo electrónico"
-                    formControlName="email"
-                    [class.is-invalid]="email.invalid && (email.dirty || email.touched)"
-                  />
-                  <label for="email" class="form-label">Ingrese su correo electrónico</label>
-                  <div *ngIf="email.invalid && (email.dirty || email.touched)">
-                    <small class="text-danger" *ngIf="email.errors.required">El correo electrónico es requerido.</small>
-                    <small class="text-danger" *ngIf="email.errors.email">Formato de correo inválido.</small>
-                  </div>
-                </div>
-  
-                <div class="form-outline mb-3">
-                  <input
-                    type="password"
-                    id="password1"
-                    class="form-control form-control-lg"
-                    placeholder="Contraseña"
-                    formControlName="password1"
-                    [class.is-invalid]="password1.invalid && (password1.dirty || password1.touched)"
-                  />
-                  <label for="password1" class="form-label">Ingrese una contraseña</label>
-                  <div *ngIf="password1.invalid && (password1.dirty || password1.touched)">
-                    <small class="text-danger" *ngIf="password1.errors.required">La contraseña es requerida.</small>
-                    <small class="text-danger" *ngIf="password1.errors.minlength">La contraseña requiere al menos 6 caracteres</small>
-              </div>
+          <form id="registroForm" [formGroup]="registryForm" (ngSubmit)="onSubmit($event)" >
+            <!-- Usuario input -->
+            <div class="form-outline mb-3">
+              
+              <input
+                type="text"
+                id="user"
+                class="form-control form-control-lg"
+                placeholder="Usuario"
+                pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                title="Usuario: Solo acepta letras y espacios en blanco"
+                formControlName="username"
+
+                name="user"
+              />
+              <label class="form-label" [class.text-danger]="Username?.errors && Username?.touched">{{Username?.errors ? 'Debe ingresar un nombre de usuario' : 'Ingrese un nombre de usuario' }}</label>
+
             </div>
 
-              <!-- Password2 input -->
-              <div class="form-outline mb-3">
-                <input
-                  type="password"
-                  id="password2"
-                  class="form-control form-control-lg"
-                  placeholder="Contraseña"
-                  formControlName="password2"
-                  [class.is-invalid]="password2.invalid && (password1.dirty || password2.touched)"
+            <!-- Nacionalidad input -->
+            <div class="form-outline mb-3">
+              <input
+                type="text"
+                id="nacionality"
+                class="form-control form-control-lg"
+                placeholder="Nacionalidad"
+                pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                title="Nacionalidad: Solo acepta letras y espacios en blanco"
+                formControlName="nationality"
+
+                name="nacionality"
+              />
+              <label class="form-label" [class.text-danger]="Nationality?.errors && Nationality?.touched">{{Nationality?.errors ? 'Debe ingresar una nacionalidad' : 'Ingrese una nacionalidad' }}</label>
+            </div>
+
+            <!-- Email input -->
+            <div class="form-outline mb-3">
+              <input
+                type="email"
+                class="form-control form-control-lg"
+                placeholder="Correo electrónico"
+                formControlName="email"
+                name="email"
+              />
+              <label class="form-label" [class.text-danger]="Email?.errors && Email?.touched">{{Email?.errors ? 'Debe ingresar un correo electrónico' : 'Ingrese su correo electrónico' }}</label>
+            </div>
+
+            
+            <!-- Password input -->
+            <div class="form-outline mb-3">
+              <input
+                type="password"
+                name="password1"
+                id="password1"
+                class="form-control form-control-lg"
+                placeholder="Contraseña"
+                formControlName="password"
+                name="password1"
                 />
-                <div *ngIf="password2.invalid && (password1.dirty || password2.touched)">
-                  <small class="text-danger" *ngIf="Password2.errors.required">La contraseña es requerida.</small>
-                  <small class="text-danger" *ngIf="password2.errors.minlength">La contraseña requiere al menos 6 caracteres</small>
+                <label class="form-label" [class.text-danger]="Password?.errors && Password?.touched">{{Password?.errors ? 'Coloque una contraseña. Mínimo 4 dígitos' : 'Contraseña' }}</label>
+            </div>
+            <!-- Password2 input -->
+            <div class="form-outline mb-3">
+              <input
+                type="password"
+                name="confirmPassword"
+                id="confirmPassword"
+                class="form-control form-control-lg"
+                placeholder="Confirmar Contraseña"
+                [(ngModel)]="confirmPass"
+                (ngModelChange)="compare()"
+                formControlName="confirmPassword"
+                required
+              />
+              <label class="form-label" [class.text-danger]="ConfirmPassword?.errors && ConfirmPassword?.touched">{{ConfirmPassword?.touched ? (ConfirmPassword?.errors ? 'La contraseña debe coincidir' : 'Es correcto') : 'Confirme la contraseña' }}</label>
+            </div>
+
+            <div class="d-flex justify-content-center align-items-center">
+              <div class="text-center text-lg mt-4 pt-2">
+                <button
+                  class="btn btn-primary btn-lg"
+
+                  style="padding-left: 2.5rem; padding-right: 2.5rem"
+                >
+                  Registrarse
+                </button>
+                <p class="small fw-bold mt-2 pt-1 mb-0">
+                  ¿Ya eres usuario?
+                  <a
+                    routerLink="/login"
+                    routerLinkActive="active"
+                    class="link-danger"
+                    >Inicia Sesión</a
+                  >
+                </p>
               </div>
+            </div>
           </form>
         </div>
-        </div>
+      </div>
     </div>
   </section>
 </section>
