@@ -22,8 +22,8 @@ import { UserService } from './service/user.service';
     HttpClientModule,
 
   ],
-  
-  providers: [ 
+
+  providers: [
     // Registrar servicio
     ServicioActivoService,
     UserService],
