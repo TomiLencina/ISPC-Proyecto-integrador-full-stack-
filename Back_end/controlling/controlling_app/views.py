@@ -1,8 +1,11 @@
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from django.shortcuts import HttpResponse
-from .models import User
+from django.db import transaction
+from .serializer import UserSerializer
+
+
 
 def index(request):
     return HttpResponse("Home")
@@ -15,11 +18,15 @@ def protected(request):
 
 
 @api_view(['POST'])
-@permission_classes([IsAuthenticated])
+@permission_classes([AllowAny])
 def register_user(request):
-    email= request.POST["email"]
-    username= request.POST["username"]
-    nationality= request.POST["nationality"]
-    password= request.POST["password"]
-    user = User.objects.create(email, username, nationality, password)
-    return Response({"content": "Esta vista está protegida"})
+
+    serializer = UserSerializer(data=request.data)
+    serializer.is_valid(raise_exception=True)
+
+    with transaction.atomic():
+        user = serializer.save()
+        user.set_password(request.data.get('password'))
+        user.save()
+
+    return Response({"content": "Usuario creado exitosamente."}, status=200)
