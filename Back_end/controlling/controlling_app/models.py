@@ -3,16 +3,26 @@ from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
+
+
+    SUBSCRIPTION_CHOICES = (
+        ('free', 'Free'),
+        ('monthly', 'Monthly'),
+        ('annual', 'Annual'),
+    )
+
+
     email = models.EmailField(max_length=50, unique=True)
     # password = models.CharField(max_length=20)
     # alias = models.CharField(max_length=20)
     nationality = models.CharField(max_length=3)
+    subscription = models.CharField(max_length=10, choices=SUBSCRIPTION_CHOICES, default='free')
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username','password']
 
     def __str__(self):
-        return f"User: {self.username} from {self.nationality}, email: {self.email}"
+        return f"User: {self.username} from {self.nationality}, email: {self.email}, subscription: {self.subscription}"
 
 
 class Portfolio(models.Model):
