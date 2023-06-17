@@ -8,7 +8,7 @@
         <div class="container-fluid h-custom pb-5">
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-md-8 col-lg-6 col-xl-4">
-              <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+              <form [formGroup]="loginForm" (ngSubmit)="onSubmit($event)" novalidate>
                 <div class="form-group">
                   <label for="email">Correo Electrónico</label>
                   <input type="email" class="form-control" formControlName="email"  [class.is-invalid]="email?.invalid && (email?.dirty || email?.touched)" required />
