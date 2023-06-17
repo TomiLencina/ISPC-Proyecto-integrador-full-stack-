@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/services/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   token: any
 
-  constructor(private formBuilder: FormBuilder, private login: LoginService) { }
+  constructor(private formBuilder: FormBuilder, private login: LoginService, private router: Router) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -40,8 +41,11 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       this.token = this.login.getToken(credentials).subscribe(
         {
-          next: ((token) => {
-            console.log(token);
+          next: ((token:any) => {
+            let accessToken = token.access;
+            localStorage.setItem("accessToken", accessToken);
+            this.router.navigate(["/cartera"])
+            
 
           }),
           error: ((error) => {
