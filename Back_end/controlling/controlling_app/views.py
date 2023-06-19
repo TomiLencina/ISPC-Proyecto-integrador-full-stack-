@@ -22,7 +22,7 @@ def protected(request):
 def get_portfolio(request):
     user = request.user
     portfolio = user.portfolio
-    operations = portfolio.operations.all()
+    operations = portfolio.operation_set.all()
     serializer = OperationSerializer(operations, many=True)
     return Response(serializer.data)
 
