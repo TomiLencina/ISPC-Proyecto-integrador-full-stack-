@@ -1,6 +1,8 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApirequestService } from 'src/app/services/apirequest.service';
 import { ServicioActivoService } from 'src/app/services/servicio-activo.service';
+import { TokenService } from 'src/app/services/token.service';
 
 class Asset {
 
@@ -11,10 +13,10 @@ class Asset {
   cantidad: number;
   ultimo_precio: number;
 
-  constructor(simbolo:string, broker: string, fecha_compra:Date, precio_compra: number, cantidad: number, ultimo_precio: number) {
+  constructor(simbolo: string, broker: string, fecha_compra: Date, precio_compra: number, cantidad: number, ultimo_precio: number) {
 
 
-      this.simbolo = simbolo,
+    this.simbolo = simbolo,
       this.broker = broker,
       this.precio_compra = precio_compra,
       this.cantidad = cantidad,
@@ -45,11 +47,8 @@ export class CarteraComponent implements OnInit, AfterViewInit {
   quantity!: number;
   totalValue!: number;
   totalProfit!: number;
-  requestServices!: ApirequestService
 
-  constructor(requests: ApirequestService) {
-
-    this.requestServices = requests
+  constructor(private requests: ApirequestService, private tokenHandler : TokenService, private router : Router) {
   }
 
   ngAfterViewInit(): void {
@@ -57,29 +56,54 @@ export class CarteraComponent implements OnInit, AfterViewInit {
 
   }
 
+  // ngOnInit(): void {
+
+
+
+  //   this.portfolio = listaDeActivosComprados;
+
+  //   this.requestServices.getPortfolioById(2).subscribe((res) => {
+  //     this.portfolio = res.activos
+  //   })
+
+  //   this.portfolio = listaDeActivosComprados;
+
+  //   this.requestServices.getPortfolioById(2).subscribe((res) => {
+  //     console.log(res);
+
+  //     this.portfolio = res.activos;
+  //     this.calculateTotal();
+  //   })
+
+  //   // this.calculateTotal();
+  // }
+
   ngOnInit(): void {
 
+    let token = this.tokenHandler.getToken() 
+    if (!token){
+      this.router.navigate(["/login"]);
+      return
+    }
 
-
-    this.portfolio = listaDeActivosComprados;
-
-    this.requestServices.getPortfolioById(2).subscribe((res) => {
+    this.requests.getPortfolio(token).subscribe(
+      (res)=>{
       console.log(res);
+      
+      this.portfolio = res
+    }, 
 
-      this.portfolio = res.activos
-    })
+      (error)=>{
+        this.router.navigate(["/login"]);
+        
+    }
+    
+    )
 
-    this.portfolio = listaDeActivosComprados;
-
-    this.requestServices.getPortfolioById(2).subscribe((res) => {
-      console.log(res);
-
-      this.portfolio = res.activos;
-      this.calculateTotal();
-    })
-
-    // this.calculateTotal();
   }
+
+
+
 
   addAsset(): void {
     this.newBuy.querySelectorAll("input").forEach(el => this.inputs.push(el));
@@ -94,12 +118,12 @@ export class CarteraComponent implements OnInit, AfterViewInit {
     this.totalProfit = this.portfolio.reduce((a, b) => a + (b.ultimo_precio - b.precio_compra) * b.cantidad, 0);
   }
 
-  getProfit(asset: any): number {
-    return (asset.ultimo_precio - asset.precio_compra) * asset.cantidad
+  getProfit(operation: any): number {
+    return (operation.last_price - operation.buy_price) * operation.quantity
   }
 
-  getProfitPerc(asset: any): number {
-    return Number((this.getProfit(asset) / (asset.precio_compra * asset.cantidad) * 100).toFixed(2))
+  getProfitPerc(operation: any): number {
+    return Number((this.getProfit(operation) / (operation.buy_price * operation.quantity) * 100).toFixed(2))
 
     this.totalValue = this.portfolio.reduce((a, b) => a + b.ultimo_precio * b.quantity, 0);
     this.totalProfit = this.portfolio.reduce((a, b) => a + (b.ultimo_precio - b.precio_compra) * b.cantidad, 0);

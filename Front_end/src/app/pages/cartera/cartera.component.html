@@ -21,21 +21,21 @@
             </tr>
           </thead>
           <tbody class="table-group-divider">
-            <tr *ngFor="let asset of portfolio">
+            <tr *ngFor="let operation of portfolio">
 
 
-              <th scope="row" [attr.contenteditable]="true" (input)="onCellEdit($event, asset, 'simbolo')">
-                {{asset.simbolo}}</th>
-              <td [attr.contenteditable]="true" (input)="onCellEdit($event, asset, 'broker')">{{asset.broker}}</td>
-              <td [attr.contenteditable]="true" (input)="onCellEdit($event, asset, 'precio_compra')">
-                ${{asset.precio_compra}}</td>
-              <td [attr.contenteditable]="true" (input)="onCellEdit($event, asset, 'cantidad')">{{asset.cantidad}}</td>
-              <td [attr.contenteditable]="true" (input)="onCellEdit($event, asset, 'ultimo_precio')">
-                ${{asset.ultimo_precio}}</td>
+              <th scope="row" [attr.contenteditable]="true" (input)="onCellEdit($event, operation, 'simbolo')">
+                {{operation.asset.simbol}}</th>
+              <td [attr.contenteditable]="true" (input)="onCellEdit($event, operation, 'broker')">{{operation.asset.broker}}</td>
+              <td [attr.contenteditable]="true" (input)="onCellEdit($event, operation, 'precio_compra')">
+                ${{operation.buy_price}}</td>
+              <td [attr.contenteditable]="true" (input)="onCellEdit($event, operation, 'cantidad')">{{operation.quantity}}</td>
+              <td [attr.contenteditable]="true" (input)="onCellEdit($event, operation, 'ultimo_precio')">
+                ${{operation.last_price}}</td>
 
 
-              <td [ngStyle]="getProfit(asset)>= 0 ? {'color':'green'}:{'color':'red'} ">${{getProfit(asset)}}</td>
-              <td [ngStyle]="getProfitPerc(asset) >= 0 ? {'color':'green'}:{'color':'red'} ">%{{getProfitPerc(asset)}}
+              <td [ngStyle]="getProfit(operation)>= 0 ? {'color':'green'}:{'color':'red'} ">${{getProfit(operation)}}</td>
+              <td [ngStyle]="getProfitPerc(operation) >= 0 ? {'color':'green'}:{'color':'red'} ">%{{getProfitPerc(operation)}}
               </td>
             </tr>
 

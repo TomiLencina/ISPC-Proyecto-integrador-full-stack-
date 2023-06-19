@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { Form, FormBuilder, FormGroup } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { ApirequestService } from 'src/app/services/apirequest.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-registro',
@@ -13,7 +15,7 @@ export class RegistroComponent {
     confirmPass!: string
     registryForm: FormGroup
 
-    constructor(private formBuilder: FormBuilder) {
+    constructor(private formBuilder: FormBuilder, private request : ApirequestService, private router: Router) {
     
         this.registryForm = this.formBuilder.group(
             {
@@ -61,8 +63,13 @@ export class RegistroComponent {
         event.preventDefault();
         if (this.registryForm.valid){
         
-            //Make the request with formdata
-            
+            let userData = this.registryForm.value
+            delete userData.confirmPassword
+            this.request.createuser(userData).subscribe((res) => {
+                if (res) {
+                    this.router.navigate(["/login"])
+                }
+            })
         }else{
 
             //Validate fields 

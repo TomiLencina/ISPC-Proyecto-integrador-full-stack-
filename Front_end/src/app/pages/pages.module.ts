@@ -17,15 +17,15 @@ import { ApirequestService } from '../services/apirequest.service';
 import { UserService } from '../services/user.service';
 import { ServicioActivoService } from '../services/servicio-activo.service';
 import { ReactiveFormsModule } from '@angular/forms';
-
-
+import { TokenService } from '../services/token.service';
 
 @NgModule({
 
   providers: [
     ApirequestService,
     UserService,
-    ServicioActivoService
+    ServicioActivoService,
+    TokenService
   ], 
   declarations: [
 

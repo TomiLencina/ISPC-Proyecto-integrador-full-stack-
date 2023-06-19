@@ -37,7 +37,6 @@ class PortfolioSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
-    portfolio = PortfolioSerializer()
     class Meta:
         model = User
-        fields = ['email', 'username', 'nationality']
+        fields = '__all__'
