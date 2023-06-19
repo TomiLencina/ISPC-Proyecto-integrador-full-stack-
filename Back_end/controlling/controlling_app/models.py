@@ -33,6 +33,9 @@ class Portfolio(models.Model):
     )
     isPremium = models.BooleanField(default=False)
 
+    def __str__(self):
+        return f"Portfolio of {self.user.username}"
+
 
 class Asset(models.Model):
     simbol = models.CharField(max_length=20)
@@ -45,7 +48,12 @@ class Operation(models.Model):
     portfolio = models.ForeignKey(Portfolio, on_delete=models.CASCADE)
     asset = models.ForeignKey(Asset, on_delete=models.CASCADE)
     buy_date = models.DateField()
-    buy_price = models.IntegerField()
+    buy_price = models.IntegerField(null=False)
     quantity = models.IntegerField(default=1)
-    last_price = models.IntegerField(default=buy_price)
+    last_price = models.IntegerField(default=None)
     sell_date = models.DateField(null=True)
+
+    def save(self, *args, **kwargs):
+        if self.last_price is None:
+            self.last_price = self.buy_price
+        super().save(*args, **kwargs)
