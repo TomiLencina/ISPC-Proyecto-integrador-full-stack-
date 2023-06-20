@@ -28,6 +28,14 @@ export class ApirequestService {
     });
     return this.http.get<any>(this.baseURL + "api/portfolio", {headers})
   }
+
+  addOperation(token:string, operationData:any){
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + token
+    });
+    return this.http.post<any>(this.baseURL + "api/operation", operationData, {headers})
+  }
+
 }
 
 

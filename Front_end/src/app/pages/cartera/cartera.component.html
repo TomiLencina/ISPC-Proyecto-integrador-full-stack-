@@ -43,12 +43,12 @@
         </table>
       </div>
 
-      <div #newBuy class="portfolio-add">
+      <form [formGroup] = "operationForm" #newBuy class="portfolio-add">
 
 
         <div class="assets-container">
           <label for="assets">Activo</label>
-          <input list="assets" id="asset">
+          <input list="assets" formControlName="simbol" id="asset">
           <datalist id="assets">
             <option value="ETH">
             <option value="NETFLIX">
@@ -59,7 +59,7 @@
         </div>
         <div class="excbrk-container">
           <label for="excbrk">Exc/Brk</label>
-          <input list="EXC/BRK" id="exchange">
+          <input list="EXC/BRK" formControlName="broker" id="exchange">
           <datalist id="EXC/BRK">
             <option value="BINANCE">
             <option value="IOL">
@@ -70,24 +70,24 @@
         </div>
         <div class="price-container">
           <label for="price">Precio:</label>
-          <input type="number" id="price" name="price">
+          <input formControlName="buy_price" type="number" id="price" name="price">
         </div>
         <div name="quant" class="quantity-container">
           <label for="quantity">Cantidad:</label>
-          <input type="number" id="quantity" name="quantity">
+          <input type="number" formControlName="quantity" id="quantity" name="quantity">
         </div>
         <div class="last-price">
           <label for="last-price">Ultimo precio:</label>
-          <input type="number" id="last-price" name="last-price">
+          <input type="number" formControlName="last_price" id="last-price" name="last-price">
         </div>
 
-      </div>
+      </form>
       <div class="alert alert-success hidden text-center mt-5" role="alert">
         Datos enviados al servidor
       </div>
 
       <div class="add-btn text-center">
-        <button type="button" class="btn" (click)="addAsset()">+</button>
+        <button type="button" class="btn" (click)="onSubmit($event)">+</button>
       </div>
 
 
