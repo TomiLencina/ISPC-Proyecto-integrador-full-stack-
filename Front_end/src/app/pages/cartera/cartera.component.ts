@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApirequestService } from 'src/app/services/apirequest.service';
 import { ServicioActivoService } from 'src/app/services/servicio-activo.service';
@@ -47,8 +48,10 @@ export class CarteraComponent implements OnInit, AfterViewInit {
   quantity!: number;
   totalValue!: number;
   totalProfit!: number;
+  operationForm!: FormGroup;
+  token!: any;
 
-  constructor(private requests: ApirequestService, private tokenHandler : TokenService, private router : Router) {
+  constructor(private formBuilder: FormBuilder, private requests: ApirequestService, private tokenHandler: TokenService, private router: Router) {
   }
 
   ngAfterViewInit(): void {
@@ -80,25 +83,62 @@ export class CarteraComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
 
-    let token = this.tokenHandler.getToken() 
-    if (!token){
+    this.token = this.tokenHandler.getToken()
+    if (!this.token) {
       this.router.navigate(["/login"]);
       return
     }
 
-    this.requests.getPortfolio(token).subscribe(
-      (res)=>{
+    this.requests.getPortfolio(this.token).subscribe(
+      (res) => {
+        console.log(res);
+
+        this.portfolio = res
+      },
+
+      (error) => {
+        this.router.navigate(["/login"]);
+
+      }
+
+    )
+
+    this.operationForm = this.formBuilder.group({
+      simbol: [''],
+      broker: [''],
+      buy_price: [''],
+      quantity: [''],
+      last_price: ['']
+
+    });
+
+  }
+
+  onSubmit(event: Event): void {
+
+
+
+
+    const newOperation = {
+      "asset": {
+        "simbol": this.operationForm.get("simbol")?.value,
+        "type": "Stock",
+        "currency": "USD",
+        "broker": this.operationForm.get("broker")?.value
+      },
+      "buy_date": "2023-05-17",
+      "buy_price": this.operationForm.get("buy_price")?.value,
+      "quantity": this.operationForm.get("quantity")?.value,
+      "last_price": this.operationForm.get("last_price")?.value
+    }
+
+    console.log("error");
+
+    this.requests.addOperation(this.token, newOperation).subscribe(res=>{
       console.log(res);
       
-      this.portfolio = res
-    }, 
+    })
 
-      (error)=>{
-        this.router.navigate(["/login"]);
-        
-    }
-    
-    )
 
   }
 
