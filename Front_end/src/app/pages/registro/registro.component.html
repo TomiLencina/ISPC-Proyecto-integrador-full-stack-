@@ -6,10 +6,10 @@
     <div class="container-fluid h-custom pb-5">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-md-8 col-lg-6 col-xl-4">
-          <form id="registroForm">
+          <form id="registroForm" [formGroup]="registryForm" (ngSubmit)="onSubmit($event)" >
             <!-- Usuario input -->
             <div class="form-outline mb-3">
-              
+
               <input
                 type="text"
                 id="user"
@@ -17,14 +17,11 @@
                 placeholder="Usuario"
                 pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
                 title="Usuario: Solo acepta letras y espacios en blanco"
-                required
-                (input)="updateUser($event)"
-                [value]="user"
+                formControlName="username"
+
                 name="user"
               />
-              <label for="user" class="form-label"
-                >Ingrese un nombre de usuario</label
-              >
+              <label class="form-label" [class.text-danger]="Username?.errors && Username?.touched">{{Username?.errors ? 'Debe ingresar un nombre de usuario' : 'Ingrese un nombre de usuario' }}</label>
 
             </div>
 
@@ -37,14 +34,11 @@
                 placeholder="Nacionalidad"
                 pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
                 title="Nacionalidad: Solo acepta letras y espacios en blanco"
-                required
-                (input)="updateNacionality($event)"
-                [value]="nacionality"
+                formControlName="nationality"
+
                 name="nacionality"
               />
-              <label for="nacionality" class="form-label"
-                >Ingrese su nacionalidad</label
-              >
+              <label class="form-label" [class.text-danger]="Nationality?.errors && Nationality?.touched">{{Nationality?.errors ? 'Debe ingresar una nacionalidad' : 'Ingrese una nacionalidad' }}</label>
             </div>
 
             <!-- Email input -->
@@ -53,16 +47,13 @@
                 type="email"
                 class="form-control form-control-lg"
                 placeholder="Correo electrónico"
-                pattern="^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$"
-                title="Formato de correo inválido"
-                required
-                (input)="updateEmail($event)"
-                [value]="email"
+                formControlName="email"
                 name="email"
               />
-              <label class="form-label">Ingrese su correo electrónico</label>
+              <label class="form-label" [class.text-danger]="Email?.errors && Email?.touched">{{Email?.errors ? 'Debe ingresar un correo electrónico' : 'Ingrese su correo electrónico' }}</label>
             </div>
 
+            
             <!-- Password input -->
             <div class="form-outline mb-3">
               <input
@@ -71,39 +62,32 @@
                 id="password1"
                 class="form-control form-control-lg"
                 placeholder="Contraseña"
-                required
-                (input)="updatePassword1($event)"
-                [value]="password1"
+                formControlName="password"
                 name="password1"
-              />
-              <label for="password1" class="form-label"
-                >Ingrese una contraseña</label
-              >
+                />
+                <label class="form-label" [class.text-danger]="Password?.errors && Password?.touched">{{Password?.errors ? 'Coloque una contraseña. Mínimo 4 dígitos' : 'Contraseña' }}</label>
             </div>
-
             <!-- Password2 input -->
             <div class="form-outline mb-3">
               <input
                 type="password"
-                name="password2"
-                id="password2"
+                name="confirmPassword"
+                id="confirmPassword"
                 class="form-control form-control-lg"
-                placeholder="Contraseña"
+                placeholder="Confirmar Contraseña"
+                [(ngModel)]="confirmPass"
+                (ngModelChange)="compare()"
+                formControlName="confirmPassword"
                 required
-                (input)="updatePassword2($event)"
-                [value]="password2"
-                name="password2"
               />
-              <label for="password2" class="form-label"
-                >Ingrese nuevamente la contraseña</label
-              >
+              <label class="form-label" [class.text-danger]="ConfirmPassword?.errors && ConfirmPassword?.touched">{{ConfirmPassword?.touched ? (ConfirmPassword?.errors ? 'La contraseña debe coincidir' : 'Es correcto') : 'Confirme la contraseña' }}</label>
             </div>
 
             <div class="d-flex justify-content-center align-items-center">
               <div class="text-center text-lg mt-4 pt-2">
                 <button
                   class="btn btn-primary btn-lg"
-                  (click)="onSubmit()"
+
                   style="padding-left: 2.5rem; padding-right: 2.5rem"
                 >
                   Registrarse

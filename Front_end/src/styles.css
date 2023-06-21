@@ -1,10 +1,10 @@
 :root {
-    --bg-color: #F3EEF4;
-    --primary: #984eF3;
-    --primary-soft: #eee6f8;
-    --secondary: #4fc4cf;
-    --tertiary: #fbdd74;
-    --font-color: #181818;
+    --bg-color: #EEEEEE;
+    --primary: #7350B9;
+    --primary-soft: #C5B6E2;
+    --secondary: #FFE863;
+    --tertiary: #50b973;
+    --font-color: #180A33;
 }
 
 
@@ -38,12 +38,11 @@ a:hover {
 button {
     border-color: var(--secondary) !important;
     background-color: var(--secondary) !important;
-    color: var(--font-color) !important;
 }
 
 button:hover {
-
+    
     border-color: var(--tertiary) !important;
     background-color: var(--tertiary) !important;
-
+    color: var(--bg-color) !important;
 }
