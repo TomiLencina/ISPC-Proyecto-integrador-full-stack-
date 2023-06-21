@@ -40,18 +40,28 @@ height: 100%;
 }
 }
 
-
-
 .contenedor-imagen {
   text-align: center;
   margin-left: 0;
-  padding-bottom: 50px;
-}
+  margin-bottom: 10px;
 
+}
 .imagen{
   justify-content: center;
-  width: 150px;
 }
+
+
+
+/* .contenedor-imagen {
+  text-align: center;
+  margin-left: 0;
+  padding-bottom: 50px;
+} */
+
+/* .imagen{
+  justify-content: center;
+  width: 150px;
+} */
 
 .container.formulario{
   display: flex;

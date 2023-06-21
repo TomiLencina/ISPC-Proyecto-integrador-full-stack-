@@ -14,13 +14,18 @@ import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
 import { SuscripcionComponent } from './suscripcion/suscripcion.component';
 import { NoticiasDeInversionesComponent } from './noticias-de-inversiones/noticias-de-inversiones.component';
 import { ApirequestService } from '../services/apirequest.service';
-
-
+import { UserService } from '../services/user.service';
+import { ServicioActivoService } from '../services/servicio-activo.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { TokenService } from '../services/token.service';
 
 @NgModule({
 
   providers: [
-    ApirequestService
+    ApirequestService,
+    UserService,
+    ServicioActivoService,
+    TokenService
   ], 
   declarations: [
 
@@ -39,7 +44,8 @@ import { ApirequestService } from '../services/apirequest.service';
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   exports: [
     PaginaPruebaComponent,

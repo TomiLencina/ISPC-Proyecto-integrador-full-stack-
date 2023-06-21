@@ -8,7 +8,9 @@ import { LayoutModule } from './layout/layout.module';
 import { PagesModule } from './pages/pages.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ServicioActivoService } from './services/servicio-activo.service';
-import { UserService } from './service/user.service';
+import { UserService } from './services/user.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginService } from './services/login.service';
 
 
 
@@ -20,14 +22,17 @@ import { UserService } from './service/user.service';
     LayoutModule,
     PagesModule,
     HttpClientModule,
-
+    ReactiveFormsModule,
+    FormsModule,
   ],
-  
-  providers: [ 
+
+  providers: [
     // Registrar servicio
     ServicioActivoService,
-    UserService],
+    UserService,
+    LoginService
+    ],
   bootstrap: [AppComponent]
 
 })
-export class AppModule {}
+export class AppModule { }

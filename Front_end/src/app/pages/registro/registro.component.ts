@@ -1,5 +1,13 @@
 import { Component } from '@angular/core';
-import { UserService } from 'src/app/service/user.service';
+import { UserService } from 'src/app/services/user.service';
+import { Form, FormBuilder, FormGroup } from '@angular/forms';
+import { Validators } from '@angular/forms';
+import { ApirequestService } from 'src/app/services/apirequest.service';
+import { Router } from '@angular/router';
+
+
+
+
 
 @Component({
   selector: 'app-registro',
@@ -7,60 +15,66 @@ import { UserService } from 'src/app/service/user.service';
   styleUrls: ['./registro.component.css'],
 })
 export class RegistroComponent {
-  user: string = '';
-  nacionality: string = '';
-  email: string = '';
-  password1: string = '';
-  password2: string = '';
+  confirmPass!: string;
+  registryForm: FormGroup;
 
-  constructor(private userService: UserService) {}
-
-  updateUser(event: Event) {
-    const inputValue = (event.target as HTMLInputElement).value;
-    this.user = inputValue;
-  }
-  updateNacionality(event: Event) {
-    const inputValue = (event.target as HTMLInputElement).value;
-    this.nacionality = inputValue;
-  }
-  updateEmail(event: Event) {
-    const inputValue = (event.target as HTMLInputElement).value;
-    this.email = inputValue;
-  }
-  updatePassword1(event: Event) {
-    const inputValue = (event.target as HTMLInputElement).value;
-    this.password1 = inputValue;
-  }
-  updatePassword2(event: Event) {
-    const inputValue = (event.target as HTMLInputElement).value;
-    this.password2 = inputValue;
+  constructor(private formBuilder: FormBuilder, private userService: UserService) {
+    this.registryForm = this.formBuilder.group({
+      password: ["", [Validators.required, Validators.minLength(4)]],
+      confirmPassword: ["", [Validators.required]],
+      email: ["", [Validators.required, Validators.email]],
+      nationality: ["", [Validators.required]],
+      username: ["", [Validators.required]],
+    });
   }
 
-  onSubmit() {
-    const jsonData = {
-      user: this.user,
-      nacionality: this.nacionality,
-      email: this.email,
-      password: this.password1,
-      password2: this.password2,
-    };
-    this.userService
-      .createUser(
-        jsonData.user,
-        jsonData.nacionality,
-        jsonData.email,
-        jsonData.password,
-        jsonData.password2
-      )
-      .subscribe(
-        (response) => {
-          console.log('El usuario ha sido creado exitosamente.');
-          console.log('Respuesta del servicio:', response);
-        },
-        (error) => {
-          console.error('Ha ocurrido un error al crear el usuario.');
-          console.error('Error:', error);
-        }
-      );
+  compare() {
+    if (this.registryForm.controls['password'].value != this.confirmPass) {
+      this.registryForm.controls['confirmPassword'].setErrors({ 'incorrect': true });
+    }
+  }
+
+  get Email() {
+    return this.registryForm.get("email");
+  }
+
+  get Password() {
+    return this.registryForm.get("password");
+  }
+
+  get ConfirmPassword() {
+    return this.registryForm.get("confirmPassword");
+  }
+
+  get Nationality() {
+    return this.registryForm.get("nationality");
+  }
+
+  get Username() {
+    return this.registryForm.get("username");
+  }
+
+  onSubmit(event: Event) {
+    event.preventDefault();
+    if (this.registryForm.valid) {
+      const formData = {
+        username: this.registryForm.value.username,
+        nationality: this.registryForm.value.nationality,
+        email: this.registryForm.value.email,
+        password: this.registryForm.value.password
+      };
+
+      this.userService.sendFormData(formData)
+        .subscribe(
+          (response: any) => {
+            console.log(response);
+          },
+          (error: any) => {
+          }
+        );
+    } else {
+
+      this.registryForm.markAllAsTouched();
+    }
   }
 }
