@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -10,12 +11,16 @@ export class UserService {
 
   createUser(
     user: string,
-    nacionality: string,
+    nationality: string,
     email: string,
     password1: string,
     password2: string
   ): Observable<any> {
-    const usuario = { user, nacionality, email, password1, password2 };
-    return this.http.post('https://apimocha.com/getportfolio/user', usuario);
+    const usuario = { user, nationality, email, password1, password2 };
+    return this.http.post('localhost:8000', usuario);
+  }
+
+  sendFormData(formData: any): Observable<any> {
+    return this.http.post('localhost:8000', formData);
   }
 }
