@@ -1,14 +1,20 @@
-.custom-footer {
-    text-align: center;
-    width: 100vw;
-    height: 200px;
-    background-color: var(--font-color);
-}
+footer {
 
-.custom-footer * {
-    color: var(--bg-color);
-}
+    background-color: var(--bs-dark);
+    bottom: 0;
+    width: 100%;
+    
+  }
 
-.custom-footer a:hover{
-    color: var(--tertiary);
-}
+  footer p {
+    margin: 0;
+    color: rgb(100, 100, 100);
+    padding: 12px;
+  }
+
+  footer .container {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }

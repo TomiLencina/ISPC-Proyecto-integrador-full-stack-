@@ -75,6 +75,8 @@ section {
   
   .card-body li {
     margin-bottom: 0.5rem;
+    align-items: center;
+
   }
   
   .card-premium {
